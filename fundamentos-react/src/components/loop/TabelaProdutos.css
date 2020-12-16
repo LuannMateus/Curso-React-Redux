@@ -1,0 +1,46 @@
+table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #abc;
+
+    width: 100%;
+}
+
+thead tr {
+    display: flex;
+    justify-content: space-around;
+}
+
+thead tr td {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2em;
+
+    margin: 0px 48px;
+}
+
+
+tbody tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+tbody .Par {
+    background-color: #ddd;
+}
+
+tbody .Impar {
+    background-color: #ccc;
+}
+
+tbody tr td {
+    padding: 8px;
+}
+
