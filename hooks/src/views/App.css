@@ -1,0 +1,39 @@
+.App {
+    display: flex;
+    height: 100vh;
+}
+
+.display {
+    font-size: 4rem;
+}
+
+.btn {
+    background-color: blueviolet;
+    color: #fff;  
+
+    font-size: 2rem;
+    padding: 20px;
+    border: 1px solid #abc;
+    border-radius: 6px;    
+
+    width: 100px;
+
+    cursor: pointer;
+}
+
+.input {
+    width: 100%;
+    height: 100%;
+    font-size: 3.5rem;
+    margin-top: 10px;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.red {
+    color: red;
+}

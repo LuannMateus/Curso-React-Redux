@@ -16,6 +16,8 @@ import UsuarioInfo from './components/conditional/UsuarioInfo';
 import DiretaPai from './components/comunication/DiretaPai';
 import IndiretaPai from './components/comunication/IndiretaPai';
 import Form from './components/forms/Input';
+import Counter from './components/contador/Counter';
+import MegaSena from './components/megaSena/MegaSena';
 
 export default props => {
     return (
@@ -23,6 +25,12 @@ export default props => {
             <h1 className='TitleApp'>Fundamentos React</h1>
 
             <div className="Cards">
+                <Card title='#13 - MegaSena' color='#84C101'>
+                    <MegaSena />
+                </Card>
+                <Card title='#12 - Counter' color='#84C101'>
+                    <Counter number={0} step={5} />
+                </Card>
                 <Card title='#11 - Componente Controlado' color='#840101'>
                     <Form />
                 </Card>
