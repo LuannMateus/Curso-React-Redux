@@ -6,6 +6,7 @@
 
 .Menu nav {
     flex: 1;
+    height: 100%;
 }
 
 .Menu ul {

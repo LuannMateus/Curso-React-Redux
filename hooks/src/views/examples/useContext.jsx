@@ -27,7 +27,7 @@ const UseContext = props => {
                 <div className="center">
                     <span className="display">{state.text}</span>
                     <span className="display">{state.number}</span>
-                    <div>
+                    <div className='buttons'>
                         <button className="btn"
                             onClick={_ => addNumber(1)}>+1</button>
                         <button className="btn"
@@ -41,7 +41,7 @@ const UseContext = props => {
                 <div className="center">
                     <span className="display">{text}</span>
                     <span className="display">{number}</span>
-                    <div>
+                    <div className='buttons'>
                         <button className="btn"
                             onClick={_ => setNumber(+1)}>+1</button>
                         <button className="btn"

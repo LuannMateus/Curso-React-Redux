@@ -10,6 +10,7 @@ import UseMemo from '../../views/examples/useMemo';
 import UseCallback from '../../views/examples/useCallback';
 import UseContext from '../../views/examples/useContext';
 import UseReducer from '../../views/examples/useReducer';
+import UsePersonalHook from '../../views/examples/usePersonalHook';
 import NotFound from '../../views/examples/NotFound';
 
 import './Content.css';
@@ -26,6 +27,8 @@ const Content = props => {
                 <Route path='/useCallback' component={UseCallback} />
                 <Route path='/useContext' component={UseContext} />
                 <Route path='/useReducer' component={UseReducer} />
+                <Route path='/usePersonalHook' component={UsePersonalHook} />
+
                 <Route path='*' component={NotFound} /> 
             </Switch>
         </main>

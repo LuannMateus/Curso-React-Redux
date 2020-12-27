@@ -2,23 +2,9 @@ import React, { useReducer } from 'react';
 import Header from '../../components/partials/Header';
 import SectionExer from '../../components/partials/SectionExer';
 
-const initialState = {
-    cart: [],
-    products: [],
-    user: {},
-    number: 0
-}
+import { reducer, initialState } from '../../store/index';
+import { numberAdd2, login } from '../../store/actions/index';
 
-function reducer(state, action) {
-    switch(action.type) {
-        case 'numberAdd2':
-            return {...state, number: state.number + 2}
-        case 'login':
-            return {...state, user: {name: action.payload }}
-        default:
-            return state
-    }
-}
 
 const UseReducer = props => {
     const [state, dispath] = useReducer(reducer, initialState)
@@ -33,12 +19,28 @@ const UseReducer = props => {
                     <span className="display">{state.number}</span>
                     {state.user.name ? <span className="display">{state.user.name}</span>
                         : <span className="display">Sem usuário</span>}
-                    <div>
-                        <button className="btn" onClick={_ => dispath({type: 'numberAdd2'})}>
+
+                    <div className='buttons'>
+                        <button className="btn" onClick={_ => numberAdd2(dispath) }>
                             +2
                         </button>
-                        <button className="btn" onClick={_ => dispath({type: 'login', payload: 'Maria'})}>
+                        <button className="btn" onClick={ _ => login(dispath, 'João') }>
                             Login
+                        </button>
+                        <button className="btn" onClick={_ => dispath({type: 'mult7'})}>
+                            Multiplicar por 7
+                        </button>
+                        <button className="btn" onClick={_ => dispath({type: 'divid25'})}>
+                            Dividir por 25
+                        </button>
+                        <button className="btn" onClick={_ => dispath({type: 'interger'})}>
+                            Tornar inteiro
+                        </button>
+                        <button className="btn" onClick={_ => dispath({type: 'add10', payload: 10})}>
+                            +10
+                        </button>
+                        <button className="btn" onClick={_ => dispath({type: 'random'})}>
+                            Random
                         </button>
                     </div>
                 </div>
