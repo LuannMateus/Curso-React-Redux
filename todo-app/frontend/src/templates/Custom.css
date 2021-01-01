@@ -1,0 +1,15 @@
+.btn {
+    margin: 0px 5px;
+}
+
+.markAsDone {
+    text-decoration: line-through;
+}
+
+.tableActions {
+    width: 120px;
+}
+
+.todoForm {
+    padding-bottom: 60px;
+}
