@@ -1,12 +1,11 @@
 import React from 'react';
 import IconButton from '../templates/IconButton.jsx';
 
-import { connect } from 'react-redux';
-
 const TodoList = props => {
-    
+
     const renderRows = _ => {
         const list = props.list || []
+
         return (
             list.map(todoItem => {
                 return (
@@ -42,6 +41,5 @@ const TodoList = props => {
         </table>
     )
 }
-
 
 export default TodoList;
