@@ -6,8 +6,9 @@ const rootReducers = combineReducers({
     todo: todoReducers
 })
 
-const storeConfig = _ => {
-    return createStore(rootReducers)
-}
+/*
+const storeConfig = devTools => {
+    return createStore(rootReducers, devTools)
+}*/
 
-export default storeConfig;
+export default rootReducers;

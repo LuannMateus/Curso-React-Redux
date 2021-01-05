@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -8,40 +8,57 @@ import Grid from '../templates/Grid.jsx';
 import IconButton from '../templates/IconButton.jsx';
 
 // Actions Creators
-import { handleChange } from '../main/store/actions/todoAction.js';
+import { handleChange, search, addTodo, clear} from '../main/store/actions/todoAction.js';
 
-const TodoForm = props => {
+class TodoForm extends Component {
 
-    const keyHandler = e => {
+    constructor(props) {
+        super(props)
+
+        this.keyHandler = this.keyHandler.bind(this)
+    }
+
+    componentDidMount() {
+        this.props.search()
+    }
+
+    keyHandler(e) {
+        const { addTodo, search, clear, description } = this.props
+
         if (e.key === 'Enter') {
-            e.shiftKey ? props.handleSearch() : props.handleAdd()
+            e.shiftKey ? search() : addTodo(description)
         } else if (e.key === 'Escape') {
-            props.handleClear()
+            clear() 
         }
     }
 
-    return (
-        <div role='form' className='todoForm ' >
+    render() {
+        const { addTodo, search, clear, description } = this.props
+
+        return (
+            <div role='form' className='todoForm ' >
 
             <Grid cols='12 9 10' >
                 <input id="description" className="form-control"
-                    placeholder='Adicionar uma tarefa...' value={props.description}
-                    onChange={e => props.handleChange(e.target.value)} 
-                    onKeyUp={keyHandler}/>
+                    placeholder='Adicionar uma tarefa...' value={this.props.description}
+                    onChange={e => this.props.handleChange(e.target.value)} 
+                    onKeyUp={this.keyHandler}/>
             </Grid>
 
             <Grid cols='12 3 2' >
                 <IconButton type='primary' icon='plus' hide={false}
-                    onClick={props.handleAdd} />
+                    onClick={_ => addTodo(description)} />
 
                 <IconButton type='info' icon='search'
-                    onClick={props.handleSearch} />
+                    onClick={_ => search(description)} />
 
                 <IconButton type='default' icon='close' 
-                    onClick={props.handleClear}/>
+                    onClick={clear}/>
             </Grid>
         </div>
-    )
+        )
+    }
+
 }
 
 const mapStateToProps = state => {
@@ -52,7 +69,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({ 
-        handleChange
+        handleChange,
+        search,
+        addTodo,
+        clear
     }, dispatch)
 }
 

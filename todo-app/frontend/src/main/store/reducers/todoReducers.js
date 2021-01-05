@@ -1,4 +1,9 @@
-import { DESCRIPTION_CHANGE } from '../actions/typeActions.js';
+import { 
+    DESCRIPTION_CHANGE,
+    TODO_SEARCH,
+    LIST_ADD,
+    CLEAR
+} from '../actions/typeActions.js';
 
 const initialValue = {
     description: '',
@@ -14,11 +19,23 @@ export default (state = initialValue, action) => {
                 ...state,
                 description: action.payload
             }
-        case 'LIST_ADD':
-            
+        
+        case TODO_SEARCH:
+
             return {
                 ...state,
-                list: action.payload
+                list: action.payload.data
+            }
+
+        case LIST_ADD:
+            return {
+                ...state,
+                description: ''
+            }
+        case CLEAR:
+            return {
+                ...state,
+                description: ''
             }
         default:
             return state
