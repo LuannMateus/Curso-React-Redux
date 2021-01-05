@@ -24,14 +24,10 @@ export default (state = initialValue, action) => {
 
             return {
                 ...state,
-                list: action.payload.data
+                list: action.payload
             }
 
         case LIST_ADD:
-            return {
-                ...state,
-                description: ''
-            }
         case CLEAR:
             return {
                 ...state,

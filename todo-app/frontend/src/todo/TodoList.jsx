@@ -10,8 +10,6 @@ const TodoList = props => {
 
     const renderRows = _ => {
 
-        console.log(props.list)
-
         const list = props.list || []
 
         return (

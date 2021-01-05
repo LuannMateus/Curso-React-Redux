@@ -47,10 +47,10 @@ class TodoForm extends Component {
 
             <Grid cols='12 3 2' >
                 <IconButton type='primary' icon='plus' hide={false}
-                    onClick={_ => addTodo(description)} />
+                    onClick={_ => addTodo(description) } />
 
                 <IconButton type='info' icon='search'
-                    onClick={_ => search(description)} />
+                    onClick={search} />
 
                 <IconButton type='default' icon='close' 
                     onClick={clear}/>
