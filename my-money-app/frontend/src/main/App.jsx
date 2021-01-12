@@ -1,8 +1,10 @@
 import React from 'react';
 import '../common/dependencies.js';
+
 import Header from '../templates/Header.jsx';
 import SideBar from '../templates/SideBar.jsx';
 import Footer from '../templates/Footer.jsx';
+import Routes from './Routes.jsx';
 
 
 const App = props => {
@@ -11,7 +13,7 @@ const App = props => {
             <Header />
             <SideBar />
             <div className="content-wrapper">
-                <h1>Conteúdo</h1>
+                <Routes />
             </div>
             <Footer />
         </div>
