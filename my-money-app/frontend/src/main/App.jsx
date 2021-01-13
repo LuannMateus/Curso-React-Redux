@@ -1,9 +1,9 @@
 import React from 'react';
 import '../common/dependencies.js';
 
-import Header from '../templates/Header.jsx';
-import SideBar from '../templates/SideBar.jsx';
-import Footer from '../templates/Footer.jsx';
+import Header from '../common/templates/Header.jsx';
+import SideBar from '../common/templates/SideBar.jsx';
+import Footer from '../common/templates/Footer.jsx';
 import Routes from './Routes.jsx';
 
 
