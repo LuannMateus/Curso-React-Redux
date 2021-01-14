@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, Route, Redirect, hashHistory} from 'react-router';
 
 import Dashboard from '../dashboard/Dashboard.jsx';
-import BillingCycle from '../billingCycle/BillingCyle.jsx';
+import BillingCycle from '../billingCycle/BillingCycle.jsx';
 
 const Routes = props => {
     return (
