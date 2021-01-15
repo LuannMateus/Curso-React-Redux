@@ -1,18 +1,23 @@
 import React from 'react';
-import { Router, Route, Redirect, hashHistory} from 'react-router';
+
+import { Switch, Route, Redirect } from 'react-router';
 
 import Dashboard from '../dashboard/Dashboard.jsx';
 import BillingCycle from '../billingCycle/BillingCycle.jsx';
 
 const Routes = props => {
     return (
-        <Router history={hashHistory}>
-            <Route path='/' component={Dashboard} />
+        <div className="content-wrapper">
+            <Switch>
+                <Route exact path='/' component={Dashboard} />
 
-            <Route path='/billingCyles' component={BillingCycle}/>
+                <Route path='/billingCyles' component={BillingCycle} />
 
-            <Redirect from='*' to='/'/>
-        </Router>
+                <Redirect from='*' to='/' />
+            </Switch>
+
+        </div>
+
     )
 }
 

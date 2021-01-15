@@ -19,7 +19,7 @@ module.exports = function (server) {
         * Rotas abertas
     */
     const openApi = express.Router()
-    server.use('oapi', openApi)
+    server.use('/oapi', openApi)
 
     const AuthService = require('../api/user/authService.js')
     openApi.post('/login', AuthService.login)
