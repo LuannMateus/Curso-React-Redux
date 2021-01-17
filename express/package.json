@@ -1,0 +1,19 @@
+{
+  "name": "exercicios_express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ex05.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Luan Mateus",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
